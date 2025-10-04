@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit'
 
 import weatherReducer from './features/weather/weatherSlice'
-import { thunk } from 'redux-thunk'
 import { createLogger } from 'redux-logger'
+
 
 
 const logger = createLogger()
@@ -12,6 +12,6 @@ const store = configureStore({
     weather:weatherReducer
   },
    middleware: getDefaultMiddleware =>
-    getDefaultMiddleware().concat(thunk,logger)
+    getDefaultMiddleware().concat(logger)
 })
 export default store
